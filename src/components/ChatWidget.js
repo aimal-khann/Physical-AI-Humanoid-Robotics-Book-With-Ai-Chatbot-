@@ -8,7 +8,7 @@ const ChatWidget = forwardRef((props, ref) => {
     const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef(null);
 
-    const API_URL = 'http://localhost:8000/ask'; // Backend API URL
+    const API_URL = 'https://book-chatbot-backend-production.up.railway.app/ask'; // Backend API URL
 
     // Expose sendMessageFromOutside function to parent components (e.g., Root.js)
     useImperativeHandle(ref, () => ({
