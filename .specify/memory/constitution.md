@@ -1,55 +1,74 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+  Sync Impact Report:
+  - Version change: 0.0.1 -> 0.1.0
+  - Modified principles: All existing principles are replaced/updated with a new set of 6 specific principles.
+  - Added sections: New core principles (1.1 to 1.6) and detailed governance sections (2.1.1, 2.1.2, 2.1.3 for Code Standards, 2.2 Amendment Procedure, 2.3 Versioning Policy, and 2.4 Compliance Review).
+  - Removed sections: None, but generic content is replaced with specific rules.
+  - Templates requiring updates (✅ updated / ⚠ pending):
+    - .specify/templates/plan-template.md ⚠ pending
+    - .specify/templates/spec-template.md ⚠ pending
+    - .specify/templates/tasks-template.md ⚠ pending
+    - .specify/templates/commands/*.md ⚠ pending (need to verify no outdated references)
+    - README.md ⚠ pending
+    - docs/quickstart.md ⚠ pending
+  - Follow-up TODOs: Manual verification and update of listed templates and documentation files is required to ensure alignment with the new constitution.
+-->
+<!--
+  SPECIFIKIT CONSTITUTION TEMPLATE
+  Version: 0.1.0
+  Ratified: 2023-01-01
+  Last Amended: 2025-12-09
+-->
 
-## Core Principles
+# Project Constitution: Physical AI & Humanoid Robotics Textbook
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+## 1. Core Principles
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### 1.1 Docusaurus Native
+The project MUST be built using standard Docusaurus 3.x structure.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### 1.2 Visual Identity
+The site MUST use a primary Green theme (#2e8555).
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### 1.3 Structured Learning
+Content IS divided into 6 specific modules.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### 1.4 Custom Navigation
+Homepage MUST use a custom card layout.
 
-### [PRINCIPLE_6_NAME]
+### 1.5 Sidebar Control
+Sidebar MUST strictly follow the defined chapter order.
 
+### 1.6 AI-Enhanced Learning
+The textbook MUST integrate an interactive RAG Chatbot that answers questions based *only* on the book's content, utilizing a floating UI and "Ask AI" context menu.
 
-[PRINCIPLE__DESCRIPTION]
+## 2. Governance
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### 2.1 Code Standards
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+#### 2.1.1 Frontend
+Code MUST be written in TypeScript (`.ts`, `.tsx`) or JavaScript (`.js`) for Frontend.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+#### 2.1.2 Backend
+Backend code MUST be written in Python (`.py`).
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+#### 2.1.3 Documentation
+Markdown files MUST use standard Docusaurus frontmatter.
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+### 2.2 Amendment Procedure
+The constitution MAY be amended through a formal proposal and review process. Proposed amendments MUST be submitted to the project maintainers for consideration and require a consensus among core contributors for adoption.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### 2.3 Versioning Policy
+The constitution's versioning follows Semantic Versioning (MAJOR.MINOR.PATCH).
+- MAJOR version increments for backward-incompatible changes, removal, or redefinition of governance or principles.
+- MINOR version increments for additions of new principles, sections, or materially expanded guidance.
+- PATCH version increments for clarifications, wording adjustments, typo fixes, or non-semantic refinements.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### 2.4 Compliance Review
+Regular reviews of project artifacts against the constitution's principles and governance rules SHALL be conducted periodically, or as triggered by significant project milestones or changes. Any deviations MUST be identified, documented, and addressed.
+
+---
+## Metadata
+- **Constitution Version:** 0.1.0
+- **Ratification Date:** 2023-01-01
+- **Last Amended Date:** 2025-12-09

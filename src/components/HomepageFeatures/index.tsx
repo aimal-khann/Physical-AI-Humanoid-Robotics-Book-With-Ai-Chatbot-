@@ -1,62 +1,94 @@
-import type {ReactNode} from 'react';
+import React from 'react';
 import clsx from 'clsx';
-import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
+  description: JSX.Element;
+  to: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Module 1: The Robotic Nervous System (ROS 2)',
+    to: '/docs/ros2',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Explore the Robot Operating System (ROS 2), the communication backbone for modern robotics, and learn how to build modular and scalable robot applications.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Module 2: Simulation Environments (Gazebo & Unity)',
+    to: '/docs/gazebo-unity',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Master the art of robot simulation with Gazebo and Unity, allowing for rapid prototyping, testing, and validation of robotic systems in virtual worlds.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Module 3: NVIDIA Isaac Ecosystem',
+    to: '/docs/isaac',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Dive into NVIDIA's Isaac platform for AI-powered robotics, from synthetic data generation with Isaac Replicator to advanced simulation in Isaac Sim.
+      </>
+    ),
+  },
+  {
+    title: 'Module 4: Vision Language Models (VLMs)',
+    to: '/docs/vla',
+    description: (
+      <>
+        Bridge the gap between language and vision by understanding and implementing Vision Language Models for tasks like object recognition and scene understanding.
+      </>
+    ),
+  },
+  {
+    title: 'Module 5: Capstone Project',
+    to: '/docs/capstone',
+    description: (
+      <>
+        Apply your knowledge in a comprehensive capstone project, where you'll design, build, and deploy a complete humanoid robotics system.
+      </>
+    ),
+  },
+  {
+    title: 'Module 6: References',
+    to: '/docs/references',
+    description: (
+      <>
+        A curated list of references and further reading to continue your journey into the exciting world of Physical AI and Humanoid Robotics.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, description, to}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+    <div className={clsx('col col--4', 'text--center', styles.feature)}>
+      <div className="card">
+        <div className="card__header">
+          <h3>{title}</h3>
+        </div>
+        <div className="card__body">
+          <p>{description}</p>
+        </div>
+        <div className={clsx('card__footer', styles.readMoreBtn)}>
+          <Link
+            className="button button--primary button--block"
+            to={to}>
+            Read More
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
 
-export default function HomepageFeatures(): ReactNode {
+export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
